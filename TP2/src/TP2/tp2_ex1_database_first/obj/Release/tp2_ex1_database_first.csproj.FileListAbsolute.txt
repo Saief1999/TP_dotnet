@@ -1,0 +1,11 @@
+C:\Users\saief\source\repos\TP2\tp2_ex1_database_first\bin\Release\tp2_database_first.exe.config
+C:\Users\saief\source\repos\TP2\tp2_ex1_database_first\bin\Release\tp2_database_first.exe
+C:\Users\saief\source\repos\TP2\tp2_ex1_database_first\bin\Release\tp2_database_first.pdb
+C:\Users\saief\source\repos\TP2\tp2_ex1_database_first\bin\Release\EntityFramework.dll
+C:\Users\saief\source\repos\TP2\tp2_ex1_database_first\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\saief\source\repos\TP2\tp2_ex1_database_first\bin\Release\EntityFramework.xml
+C:\Users\saief\source\repos\TP2\tp2_ex1_database_first\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\saief\source\repos\TP2\tp2_ex1_database_first\obj\Release\tp2_ex1_database_first.csprojAssemblyReference.cache
+C:\Users\saief\source\repos\TP2\tp2_ex1_database_first\obj\Release\tp2_ex1_database_first.csproj.CopyComplete
+C:\Users\saief\source\repos\TP2\tp2_ex1_database_first\obj\Release\tp2_database_first.exe
+C:\Users\saief\source\repos\TP2\tp2_ex1_database_first\obj\Release\tp2_database_first.pdb

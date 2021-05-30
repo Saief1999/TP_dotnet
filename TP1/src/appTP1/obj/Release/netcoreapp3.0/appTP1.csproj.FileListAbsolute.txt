@@ -1,0 +1,11 @@
+C:\Users\saief\source\repos\appTP1\appTP1\bin\Release\netcoreapp3.0\appTP1.exe
+C:\Users\saief\source\repos\appTP1\appTP1\bin\Release\netcoreapp3.0\appTP1.deps.json
+C:\Users\saief\source\repos\appTP1\appTP1\bin\Release\netcoreapp3.0\appTP1.runtimeconfig.json
+C:\Users\saief\source\repos\appTP1\appTP1\bin\Release\netcoreapp3.0\appTP1.runtimeconfig.dev.json
+C:\Users\saief\source\repos\appTP1\appTP1\bin\Release\netcoreapp3.0\appTP1.dll
+C:\Users\saief\source\repos\appTP1\appTP1\bin\Release\netcoreapp3.0\appTP1.pdb
+C:\Users\saief\source\repos\appTP1\appTP1\obj\Release\netcoreapp3.0\appTP1.csprojAssemblyReference.cache
+C:\Users\saief\source\repos\appTP1\appTP1\obj\Release\netcoreapp3.0\appTP1.AssemblyInfoInputs.cache
+C:\Users\saief\source\repos\appTP1\appTP1\obj\Release\netcoreapp3.0\appTP1.AssemblyInfo.cs
+C:\Users\saief\source\repos\appTP1\appTP1\obj\Release\netcoreapp3.0\appTP1.dll
+C:\Users\saief\source\repos\appTP1\appTP1\obj\Release\netcoreapp3.0\appTP1.pdb

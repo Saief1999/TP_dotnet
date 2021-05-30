@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="VCSystems" EntityType="Model1.Store.VCSystems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Developers" EntityType="Model1.Store.Developers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DeveloperVCSystem" EntityType="Model1.Store.DeveloperVCSystem" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_DeveloperVCSystem_Developer" Association="Model1.Store.FK_DeveloperVCSystem_Developer">
+      <End Role="Developer" EntitySet="Developers" />
+      <End Role="DeveloperVCSystem" EntitySet="DeveloperVCSystem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeveloperVCSystem_VCSystem" Association="Model1.Store.FK_DeveloperVCSystem_VCSystem">
+      <End Role="VCSystem" EntitySet="VCSystems" />
+      <End Role="DeveloperVCSystem" EntitySet="DeveloperVCSystem" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="VCSystems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="release_date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Developers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="full_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="adress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="age" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeveloperVCSystem">
+    <Key>
+      <PropertyRef Name="Developer_Id" />
+      <PropertyRef Name="VCSystems_Id" />
+    </Key>
+    <Property Name="Developer_Id" Type="int" Nullable="false" />
+    <Property Name="VCSystems_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_DeveloperVCSystem_Developer">
+    <End Role="Developer" Type="Model1.Store.Developers" Multiplicity="1" />
+    <End Role="DeveloperVCSystem" Type="Model1.Store.DeveloperVCSystem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Developer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DeveloperVCSystem">
+        <PropertyRef Name="Developer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeveloperVCSystem_VCSystem">
+    <End Role="DeveloperVCSystem" Type="Model1.Store.DeveloperVCSystem" Multiplicity="*" />
+    <End Role="VCSystem" Type="Model1.Store.VCSystems" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="VCSystem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DeveloperVCSystem">
+        <PropertyRef Name="VCSystems_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="VCSystems" EntityType="Model1.VCSystem" />
+          <EntitySet Name="Developers" EntityType="Model1.Developer" />
+          <AssociationSet Name="DeveloperVCSystem" Association="Model1.DeveloperVCSystem">
+            <End Role="Developer" EntitySet="Developers" />
+            <End Role="VCSystem" EntitySet="VCSystems" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="VCSystem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="release_date" Type="String" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" />
+          <Property Name="description" Type="String" Nullable="false" />
+          <NavigationProperty Name="Developer" Relationship="Model1.DeveloperVCSystem" FromRole="VCSystem" ToRole="Developer" />
+        </EntityType>
+        <EntityType Name="Developer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="full_name" Type="String" Nullable="false" />
+          <Property Name="adress" Type="String" Nullable="false" />
+          <Property Name="age" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="VCSystems" Relationship="Model1.DeveloperVCSystem" FromRole="Developer" ToRole="VCSystem" />
+        </EntityType>
+        <Association Name="DeveloperVCSystem">
+          <End Type="Model1.Developer" Role="Developer" Multiplicity="*" />
+          <End Type="Model1.VCSystem" Role="VCSystem" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="VCSystems">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.VCSystem)">
+        <MappingFragment StoreEntitySet="VCSystems">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="release_date" ColumnName="release_date" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Developers">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Developer)">
+        <MappingFragment StoreEntitySet="Developers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="age" ColumnName="age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="DeveloperVCSystem" TypeName="Model1.DeveloperVCSystem" StoreEntitySet="DeveloperVCSystem">
+      <EndProperty Name="Developer">
+        <ScalarProperty Name="Id" ColumnName="Developer_Id" />
+      </EndProperty>
+      <EndProperty Name="VCSystem">
+        <ScalarProperty Name="Id" ColumnName="VCSystems_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

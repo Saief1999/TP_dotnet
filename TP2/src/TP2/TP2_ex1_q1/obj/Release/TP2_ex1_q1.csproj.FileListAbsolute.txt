@@ -1,0 +1,6 @@
+C:\Users\saief\source\repos\TP2\TP2_ex1_q1\bin\Release\TP2.exe.config
+C:\Users\saief\source\repos\TP2\TP2_ex1_q1\bin\Release\TP2.exe
+C:\Users\saief\source\repos\TP2\TP2_ex1_q1\bin\Release\TP2.pdb
+C:\Users\saief\source\repos\TP2\TP2_ex1_q1\obj\Release\TP2_ex1_q1.csprojAssemblyReference.cache
+C:\Users\saief\source\repos\TP2\TP2_ex1_q1\obj\Release\TP2.exe
+C:\Users\saief\source\repos\TP2\TP2_ex1_q1\obj\Release\TP2.pdb

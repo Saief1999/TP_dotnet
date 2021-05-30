@@ -1,0 +1,14 @@
+C:\Users\saief\source\repos\TP2\tp2_code_first\bin\Debug\tp2_code_first.exe.config
+C:\Users\saief\source\repos\TP2\tp2_code_first\bin\Debug\tp2_code_first.exe
+C:\Users\saief\source\repos\TP2\tp2_code_first\bin\Debug\tp2_code_first.pdb
+C:\Users\saief\source\repos\TP2\tp2_code_first\bin\Debug\EntityFramework.dll
+C:\Users\saief\source\repos\TP2\tp2_code_first\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\saief\source\repos\TP2\tp2_code_first\bin\Debug\EntityFramework.xml
+C:\Users\saief\source\repos\TP2\tp2_code_first\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\saief\source\repos\TP2\tp2_code_first\obj\Debug\tp2_code_first.csprojAssemblyReference.cache
+C:\Users\saief\source\repos\TP2\tp2_code_first\obj\Debug\tp2_code_first.csproj.CopyComplete
+C:\Users\saief\source\repos\TP2\tp2_code_first\obj\Debug\tp2_code_first.exe
+C:\Users\saief\source\repos\TP2\tp2_code_first\obj\Debug\tp2_code_first.pdb
+C:\Users\saief\source\repos\TP2\tp2_code_first\obj\Debug\tp2_code_first.Migrations.version_0.resources
+C:\Users\saief\source\repos\TP2\tp2_code_first\obj\Debug\tp2_code_first.csproj.GenerateResource.cache
+C:\Users\saief\source\repos\TP2\tp2_code_first\obj\Debug\tp2_code_first.Migrations.version_1.resources

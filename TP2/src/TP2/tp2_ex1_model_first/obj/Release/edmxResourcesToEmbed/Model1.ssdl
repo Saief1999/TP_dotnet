@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="VCSystems" EntityType="Model1.Store.VCSystems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Developers" EntityType="Model1.Store.Developers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DeveloperVCSystem" EntityType="Model1.Store.DeveloperVCSystem" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_DeveloperVCSystem_Developer" Association="Model1.Store.FK_DeveloperVCSystem_Developer">
+      <End Role="Developer" EntitySet="Developers" />
+      <End Role="DeveloperVCSystem" EntitySet="DeveloperVCSystem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeveloperVCSystem_VCSystem" Association="Model1.Store.FK_DeveloperVCSystem_VCSystem">
+      <End Role="VCSystem" EntitySet="VCSystems" />
+      <End Role="DeveloperVCSystem" EntitySet="DeveloperVCSystem" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="VCSystems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="release_date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Developers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="full_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="adress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="age" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeveloperVCSystem">
+    <Key>
+      <PropertyRef Name="Developer_Id" />
+      <PropertyRef Name="VCSystems_Id" />
+    </Key>
+    <Property Name="Developer_Id" Type="int" Nullable="false" />
+    <Property Name="VCSystems_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_DeveloperVCSystem_Developer">
+    <End Role="Developer" Type="Model1.Store.Developers" Multiplicity="1" />
+    <End Role="DeveloperVCSystem" Type="Model1.Store.DeveloperVCSystem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Developer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DeveloperVCSystem">
+        <PropertyRef Name="Developer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeveloperVCSystem_VCSystem">
+    <End Role="DeveloperVCSystem" Type="Model1.Store.DeveloperVCSystem" Multiplicity="*" />
+    <End Role="VCSystem" Type="Model1.Store.VCSystems" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="VCSystem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DeveloperVCSystem">
+        <PropertyRef Name="VCSystems_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

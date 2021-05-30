@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="VCSystems">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.VCSystem)">
+        <MappingFragment StoreEntitySet="VCSystems">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="release_date" ColumnName="release_date" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Developers">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Developer)">
+        <MappingFragment StoreEntitySet="Developers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="age" ColumnName="age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="DeveloperVCSystem" TypeName="Model1.DeveloperVCSystem" StoreEntitySet="DeveloperVCSystem">
+      <EndProperty Name="Developer">
+        <ScalarProperty Name="Id" ColumnName="Developer_Id" />
+      </EndProperty>
+      <EndProperty Name="VCSystem">
+        <ScalarProperty Name="Id" ColumnName="VCSystems_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
